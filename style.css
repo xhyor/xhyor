@@ -322,11 +322,13 @@ header p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  height: 100%;
-  padding-top: calc(64px + 20px); /* 保持和导航栏间距一致 */
-  box-sizing: border-box;
+  padding-top: calc(64px + 20px);
+  width: 100%;
+}
+
+.giscus {
+  width: 90%;
+  max-width: 800px;
 }
 
 #commentForm {
@@ -387,4 +389,5 @@ header p{
   font-family: 'Nunito', 'Noto Sans SC', sans-serif;
   font-size: 1rem; /* 可选，保持与页面一致 */
 }
+
 
