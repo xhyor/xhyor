@@ -1,0 +1,230 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;   /* 禁止横向滚动 */
+  overflow-y: auto;     /* 启用纵向滚动 */
+}
+
+body { font-family:'Nunito', 'Noto Sans SC', sans-serif; margin:0; padding:0; background:#111; color:#fff; overflow:hidden; }
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:center;padding:1rem;background:rgba(0,0,0,0.6);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1);}
+nav a{color:#fff;text-decoration:none;margin:0 1.5rem;font-weight:500;position:relative;}
+nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:#fff;transform:scaleX(0);transform-origin:right;transition:0.3s;}
+nav a:hover::after{transform:scaleX(1);transform-origin:left;}
+.page-container{width:100vw;height:100vh;position:relative;}
+
+.page{width:100%;height:100%;position:absolute;top:0;left:0;opacity:0;transform:translateY(50px);transition:all 0.6s ease;pointer-events:none;}
+
+
+.page.active{opacity:1;transform:translateY(0);pointer-events:all;}
+/* About */
+#about header{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center; height:100%;}
+header img{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:1rem;}
+header h1{font-size:2rem;margin-bottom:0.5rem;}
+header p{opacity:0.7;margin-bottom:2rem;}
+/* Releases */
+/* Releases 特殊处理 */
+#releases {
+  overflow-y: auto;           /* 允许上下滚动 */
+  padding: 60px 20px;
+  box-sizing: border-box;
+
+  display:block;   /* 🔥 关键：不要继承 flex 居中 */
+}
+
+#releases .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自适应换行 */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: stretch;  /* 每个格子拉伸，避免居中 */
+}
+
+.grid-item{
+  position:relative;
+  width:100%;
+  padding-top:100%;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  color:#fff;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 鼠标悬停缩放 + 光晕 */
+.grid-item:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(0,255,255,0.8);
+}
+
+.grid-item::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image: var(--bg); /* 保留原先设置的背景变量 */
+  background-size: cover;      /* 自动缩放，填充整个格子 */
+  background-position: center; /* 居中显示 */
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  z-index:0;
+  transition: transform 0.4s ease;
+}
+
+.grid-item:hover::before{
+  transform: scale(1.05); /* 悬停时略微放大背景 */
+}
+
+
+.grid-item h3, .grid-item a{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1;
+  margin:0;
+}
+
+.grid-item h3{
+  top:1rem;
+  font-size:1.2rem;
+  text-align:center;
+  width:90%;
+}
+
+.grid-item a{
+  bottom:1rem;
+  padding:0.4rem 1rem;
+  border:2px solid #fff;
+  border-radius:5px;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.grid-item a:hover{
+  background:#0ff;
+  color:#111;
+  box-shadow:0 0 15px #0ff;
+}
+
+/* Social 页面整体居中（桌面端 + 移动端） */
+#social {
+  display: flex;
+  flex-direction: column;      /* 上下排列：social 链接 + contact */
+  align-items: center;         /* 水平居中 */
+  justify-content: center;     /* 垂直居中 */
+  height: 100%;
+  text-align: center;
+  padding-top: 120px;          /* 避免导航栏覆盖 */
+  box-sizing: border-box;
+}
+
+/* social 链接水平居中 */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;     /* 水平居中 */
+  gap: 2rem;                   /* 桌面端间距 */
+  margin-bottom: 2rem;
+}
+
+/* social 链接样式 */
+.social a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 1rem;             /* 桌面端字体 */
+}
+
+.social a img {
+  width: 32px;                 /* 桌面端图标大小 */
+  height: 32px;
+  filter: invert(100%);        /* 白色图标 */
+  transition: all 0.3s;
+}
+
+.social a:hover img {
+  filter: invert(100%) drop-shadow(0 0 6px #0ff);
+}
+
+.social a:hover {
+  color: #0ff;
+  transform: translateY(-2px);
+}
+
+/* contact 邮箱按钮 */
+#contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 1rem;             /* 桌面端字体 */
+}
+
+#contact svg {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s;
+  fill: #fff;
+}
+
+#contact:hover svg {
+  filter: drop-shadow(0 0 6px #0ff);
+}
+
+#contact:hover {
+  color: #0ff;
+  transform: translateY(-2px);
+}
+
+/* -------- 移动端优化 -------- */
+@media (max-width: 768px) {
+  .social a {
+    font-size: 0.9rem;       
+  }
+  .social a img {
+    width: 28px;
+    height: 28px;            
+  }
+  #contact {
+    font-size: 0.9rem;
+  }
+  #contact svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social {
+    gap: 1.2rem;             
+  }
+  .social a {
+    font-size: 0.85rem;
+  }
+  .social a img {
+    width: 24px;
+    height: 24px;
+  }
+  #contact {
+    font-size: 0.85rem;
+  }
+  #contact svg {
+    width: 24px;
+    height: 24px;
+  }
+}
