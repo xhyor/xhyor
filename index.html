@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<title>xhyor</title>
+
+  <!-- 网页图标 Favicon 和 Apple Touch Icon -->
+  <link rel="icon" href="icon-180x.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="icon-180x.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180x.png">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#releases">Releases</a>
+  <a href="#social">Social</a>
+  <a href="#comments">Message Board</a>
+</nav>
+
+<div class="page-container">
+  <!-- About -->
+  <div class="page active" id="about">
+    <header>
+      <img src="avatar.jpg" alt="头像">
+      <h1>xhyor</h1>
+      <p>22y/o, music producer</p>
+    </header>
+  </div>
+
+  <!-- Releases -->
+  <div class="page" id="releases">
+    <div class="grid">
+      <div class="grid-item" style="--bg:url('BTS - いいね!Pt.2 ～あの場所で～(xhyor Remix).jpg');">
+        <h3>BTS - いいね!Pt.2 ～あの場所で～ (xhyor Remix)</h3>
+        <a href="https://soundcloud.com/xhyor/sets/bts-pt-2-xhyor-remix" target="_blank">Listen</a>
+      </div>
+      <div class="grid-item" style="--bg:url('Stack - カゲロウ (xhyor Remix).jpg');">
+        <h3>Stack - カゲロウ (xhyor Remix)</h3>
+        <a href="https://soundcloud.com/xhyor/sets/stack-xhyor-remix" target="_blank">Listen</a>
+      </div>
+      <div class="grid-item" style="--bg:url('ILLIT - Magnetic (xhyor Remix).jpg');">
+        <h3>ILLIT - Magnetic (xhyor Remix)</h3>
+        <a href="https://soundcloud.com/xhyor/sets/illit-magnetic-xhyor-remix" target="_blank">Listen</a>
+      </div>
+      <!-- 可根据需要添加更多作品 -->
+    </div>
+  </div>
+
+  <!-- Social -->
+  <div class="page" id="social">
+    <div class="social">
+      <a href="https://x.com/xhyor123"><img src="twitter.svg" alt="Twitter">Twitter</a>
+      <a href="https://www.instagram.com/xhyor123/"><img src="instagram.svg" alt="Instagram">Instagram</a>
+      <a href="https://open.spotify.com/artist/4fURY57vjgvVB7EwjGvD7N"><img src="spotify.svg" alt="Spotify">Spotify</a>
+      <a href="https://soundcloud.com/xhyor"><img src="soundcloud.svg" alt="SoundCloud">SoundCloud</a>
+      <a href="https://www.youtube.com/@xhyor123"><img src="youtube.svg" alt="YouTube">YouTube</a>
+    </div>
+    <a href="mailto:doudoumunashii@gmail.com" id="contact">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+      </svg>
+      Contact
+    </a>
+  </div>
+</div>
+
+<!-- 留言板 -->
+<div class="page" id="comments">
+  <h2>Message Board</h2>
+  <form id="commentForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <textarea name="message" placeholder="Write your message here <3" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <div id="commentList">
+    <!-- 留言会显示在这里 -->
+  </div>
+</div>
+
+
+<footer>&copy; <span id="year"></span> xhyor</footer>
+<canvas id="bg"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
