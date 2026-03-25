@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - xhyor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="icon-180x.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x.png">
+    <meta property="og:title" content="xhyor | Music Producer">
+    <meta property="og:image" content="YOUR_THUMBNAIL.jpg">
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <nav class="modern-nav">
+        <div class="brand">XHYOR</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item" data-name="Home">Home</a>
+            <a href="#works" class="nav-item" data-name="Releases">Releases</a>
+            <a href="#commission" class="nav-item" data-name="Commission">Commission</a>
+            <a href="#links" class="nav-item" data-name="Links">Links</a>
+            <a href="#comments" class="nav-item" data-name="Message Board">Message Board</a>
+        </div>
+        <div class="nav-right">
+            <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <div class="theme-icon-container">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <span class="brand">XHYOR</span>
+            <button id="mobile-menu-close" class="mobile-menu-btn" aria-label="Close Menu">
+                <div class="hamburger active">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#home" class="mobile-nav-item" data-name="Home">Home</a>
+            <a href="#works" class="mobile-nav-item" data-name="Releases">Releases</a>
+            <a href="#commission" class="mobile-nav-item" data-name="Commission">Commission</a>
+            <a href="#links" class="mobile-nav-item" data-name="Links">Links</a>
+            <a href="#comments" class="mobile-nav-item" data-name="Message Board">Message Board</a>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        
+        <section class="page" id="home">
+            <div class="hero">
+                <img src="avatar.jpg" alt="XHYOR" class="main-logo">
+                <p class="tagline">MUSIC PRODUCER / 22Y.O</p>
+                <div class="player-container">
+                    <p class="section-label">LATEST RELEASE</p>
+                    <iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2161514324&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="works">
+            <h2 class="page-header">RELEASES</h2>
+            <div class="modern-grid">
+                <div class="grid-item" style="--bg: url('AOA - Chocolate (xhyor Remix).png');">
+                    <div class="overlay">
+                        <h3>AOA - Chocolate (xhyor Remix)</h3>
+                        <a href="https://soundcloud.com/xhyor/sets/aoa-chocolate-xhyor-remix" target="_blank" class="btn">LISTEN</a>
+                    </div>
+                </div>
+                <div class="grid-item" style="--bg: url('BTS - いいね!Pt.2 ～あの場所で～(xhyor Remix).jpg');">
+                    <div class="overlay">
+                        <h3>BTS - いいね!Pt.2 ～あの場所で～(xhyor Remix)</h3>
+                        <a href="https://fanlink.tv/iine" target="_blank" class="btn">LISTEN</a>
+                    </div>
+                </div>
+                <div class="grid-item" style="--bg: url('Stack - カゲロウ (xhyor Remix).jpg');">
+                    <div class="overlay">
+                        <h3>Stack - カゲロウ (xhyor Remix)</h3>
+                        <a href="https://soundcloud.com/xhyor/sets/stack-xhyor-remix" target="_blank" class="btn">LISTEN</a>
+                    </div>
+                </div>
+                <div class="grid-item" style="--bg: url('ILLIT - Magnetic (xhyor Remix).jpg');">
+                    <div class="overlay">
+                        <h3>ILLIT - Magnetic (xhyor Remix)</h3>
+                        <a href="https://fanlink.tv/vQbi" target="_blank" class="btn">LISTEN</a>
+                    </div>
+                </div>
+                <div class="grid-item" style="--bg: url('Jung Kook - Seven (feat. Latto) (Three Yes & xhyor Remix).jpg');">
+                    <div class="overlay">
+                        <h3>Jung Kook - Seven (feat. Latto) (Three Yes & xhyor Remix)</h3>
+                        <a href="https://fanlink.tv/t777" target="_blank" class="btn">LISTEN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="commission">
+            <h2 class="page-header">COMMISSION</h2>
+            <div class="comm-layout">
+                <div class="comm-main">
+                    <div class="status-indicator"><span class="pulse-dot"></span> OPEN FOR PROJECTS</div>
+                    <p class="description">Specializing in electronic music production, remixing, and mixing / mastering. Feel free to reach out for inquiries.</p>
+                    <a href="mailto:doudoumunashii@gmail.com" class="big-email">doudoumunashii@gmail.com</a>
+                </div>
+                <div class="services">
+                    <div class="service-item"><span>01</span> ARRANGEMENT</div>
+                    <div class="service-item"><span>02</span> MIXING & MASTERING</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="links">
+            <h2 class="page-header">LINKS</h2>
+            <div class="social-list">
+                <a href="https://x.com/xhyor123" target="_blank" class="social-link">TWITTER <i class="fas fa-arrow-right"></i></a>
+                <a href="https://www.instagram.com/xhyor123/" target="_blank" class="social-link">INSTAGRAM <i class="fas fa-arrow-right"></i></a>
+                <a href="https://soundcloud.com/xhyor" target="_blank" class="social-link">SOUNDCLOUD <i class="fas fa-arrow-right"></i></a>
+                <a href="https://www.youtube.com/@xhyor123" target="_blank" class="social-link">YOUTUBE <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="page" id="comments">
+            <h2 class="page-header">MESSAGE BOARD</h2>
+            <div class="giscus-wrapper">
+                <script src="https://giscus.app/client.js"
+                        data-repo="xhyor/xhyor-comments"
+                        data-repo-id="R_kgDOP4dLdg"
+                        data-category="Message Board"
+                        data-category-id="DIC_kwDOP4dLds4Cv_lC"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="bottom"
+                        data-theme="transparent_dark"
+                        data-lang="en"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
